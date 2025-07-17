@@ -1,0 +1,166 @@
+
+[Page 1 - Normal Text]
+EDUCATION
+IIITM Gwalior Integerated Course (Mtech + Btech) in Information Technology
+CGPA: 7.41
+EXPERIENCE
+Amazon - SDE Intern 
+Developed an API for publishing documents submitted by developers on the Amazon Appstore website.
+Implemented the Spring Framework to create a scalable and efficient backend, enabling seamless
+integration with the Amazon Appstore and improving the overall document processing workflow.
+Conducted Unit Testing to verify the functionality of the API and ensure code quality.
+PROJECTS
+Brighter Beyond 
+Tech Stack: Next.js, Node.js, Tailwind CSS, MongoDB, Cloudinary, 100ms.live, Gemini + RAG, React Context API
+Brighter Beyond is a full-stack platform that connects individuals facing depression with volunteers for support via
+chat, video calls, interactive wellness tools, and an AI-powered mental health chatbot using RAG and Gemini models.
+SGM Website 
+Tech Stack: HTML, CSS, JavaScript
+Developed a website for the SGM club to increase its online presence and streamline event management.
+QuickNotes 
+Tech Stack: JavaScript, Tailwind CSS, EJS, Node.js
+Developed a dynamic notes-storing website with features to create, read, edit, and delete notes efficiently.
+Implemented functionality to edit both the title and content of notes seamlessly.
+TOKO SANIYA
++91 9628679084 | tokosaniya09@gmail.com
+LinkedIn | GitHub | LeetCode
+2022 - 2027
+May 2024 - July 2024
+Freelance
+Delivered end-to-end solutions as a Freelance Full-Stack Developer,
+LEADERSHIP EXPERIENCE
+Google Developer Group On Campus Organizer 
+Leader at my university, dedicated to helping others learn and connect.
+Collaborate with Google to seek support and grow the community.
+IEEE Executive Member 
+Part of the Program and Operations Team.
+Volunteered at events like IEEE Day and IATMSI Conference.
+SGM (Student Gyan Movement) Executive Member
+Served as a teacher in the club.
+Volunteered at events like the SGM Science Fair and school drives.
+Helped spread the importance of education to underprivileged students.
+(2024 – Present)
+(2023 - Present)
+ (2023 - Present)
+SKILLS
+Programming Languages: Java, Python, JavaScript, TypeScript
+Web Technologies: HTML, CSS, React, Next.js, Tailwind CSS, FastAPI, Node.js, Express.js, Spring Boot
+Database Systems: SQL, PostgreSQL, MongoDB, Supabase
+Cloud Technologies: AWS, Docker
+Other Tools Technologies: Spring, Canva, VS Code, Github
+Machine Learning & AI: CLIP, Qdrant, OpenAI APIs, Vision-Language Models (Qwen, BLIP), Hugging Face
+Core Subjects: OOPS, OS, DBMS, CN
+ACHIEVEMENTS
+◦ One of 80 girls out of 18000 who got selected for Linkdin Cochin Mentee Programme
+◦ Solved 600+ questions on Leetcode and  achieved 8+ badges on LeetCode
+◦ Won in special category in Linkedin Coachin Hackathon among 8 teams
+◦ Secured an internship at Google
+
+
+[Page 1 - OCR Extracted Text]
+TOKO SANIYA
+
++91 9628679084 | tokosaniya09@gmail.com
+Linkedin | GitHub | LeetCode
+
+EDUCATION
+
+IIITM Gwalior Integerated Course (Mtech + Btech) in Information Technology
+CGPA: 7.41
+
+EXPERIENCE
+
+2022 - 2027
+
+Amazon - SDE Intern
+
+« Developed an API for publishing documents submitted by developers on the Amazon Appstore website.
+« Implemented the Spring Framework to create a scalable and efficient backend, enabling seamless
+integration with the Amazon Appstore and improving the overall document processing workflow.
+
+« Conducted Unit Testing to verify the functionality of the API and ensure code quality.
+
+Freelance
+Delivered end-to-end solutions as a Freelance Full-Stack Developer,
+
+PROJECTS
+
+May 2024 - July 2024
+
+Brighter Beyond
+Tech Stack: Next.js, Node.js, Tailwind CSS, MongoDB, Cloudinary, 100ms.live, Gemini + RAG, React Context API
+Brighter Beyond is a full-stack platform that connects individuals facing depression with volunteers for support via
+chat, video calls, interactive wellness tools, and an Al-powered mental health chatbot using RAG and Gemini models.
+
+SGM Website
+Tech Stack: HTML, CSS, JavaScript
+Developed a website for the SGM club to increase its online presence and streamline event management.
+
+QuickNotes
+Tech Stack: JavaScript, Tailwind CSS, EJS, Node.js
+Developed a dynamic notes-storing website with features to create, read, edit, and delete notes efficiently.
+
+©
+
+®
+
+®
+
+Implemented functionality to edit both the title and content of notes seamlessly.
+
+SKILLS
+
+Programming Languages: Java, Python, JavaScript, TypeScript
+
+Web Technologies: HTML, CSS, React, Next.js, Tailwind CSS, FastAPI, Node.js, Express.js, Spring Boot
+
+Database Systems: SQL, PostgreSQL, MongoDB, Supabase
+Cloud Technologies: AWS, Docker
+Other Tools Technologies: Spring, Canva, VS Code, Github
+
+Machine Learning & Al: CLIP, Qdrant, OpenAl APIs, Vision-Language Models (Qwen, BLIP), Hugging Face
+
+Co
+
+re Subjects: OOPS, OS, DBMS, CN
+
+ACHIEVEMENTS
+
+© One of 80 girls out of 18000 who got selected for Linkdin Cochin Mentee Programme
+e Solved 600+ questions on Leetcode and achieved 8+ badges on LeetCode
+
+e Won in special category in Linkedin Coachin Hackathon among 8 teams
+
+e Secured an internship at Google
+
+LEADERSHIP EXPERIENCE
+
+Google Developer Group On Campus Organizer
+Leader at my university, dedicated to helping others learn and connect.
+
+Col
+
+laborate with Google to seek support and grow the community.
+
+IEEE Executive Member
+Part of the Program and Operations Team.
+
+Vo
+
+unteered at events like IEEE Day and IATMSI Conference.
+
+SGM (Student Gyan Movement) Executive Member
+Served as a teacher in the club.
+
+Vo
+Hel
+
+unteered at events like the SGM Science Fair and school drives.
+
+ped spread the importance of education to underprivileged students.
+
+(2024 - Present)
+
+(2023 - Present)
+
+(2023 - Present)
