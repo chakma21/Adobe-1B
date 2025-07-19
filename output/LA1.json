@@ -1,0 +1,15 @@
+{
+    "title": "Copy images",
+    "outline": [
+        {
+            "level": "H1",
+            "text": "Export objects to separate PDF",
+            "page": 2
+        },
+        {
+            "level": "H1",
+            "text": "Take a snapshot of a page",
+            "page": 3
+        }
+    ]
+}
