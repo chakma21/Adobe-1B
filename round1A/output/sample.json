@@ -2,23 +2,33 @@
     "title": "TOKO SANIYA",
     "outline": [
         {
+            "level": "H3",
+            "text": "EDUCATION",
+            "page": 1
+        },
+        {
             "level": "H1",
+            "text": "2022 - 2027",
+            "page": 1
+        },
+        {
+            "level": "H2",
             "text": "EXPERIENCE",
             "page": 1
         },
         {
-            "level": "H3",
+            "level": "H2",
             "text": "PROJECTS",
             "page": 1
         },
         {
             "level": "H2",
-            "text": "+91 9628679084 | tokosaniya09@gmail.com",
+            "text": "ACHIEVEMENTS",
             "page": 1
         },
         {
             "level": "H2",
-            "text": "LinkedIn | GitHub | LeetCode",
+            "text": "LEADERSHIP EXPERIENCE",
             "page": 1
         }
     ]
