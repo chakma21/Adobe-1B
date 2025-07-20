@@ -12,7 +12,7 @@
             "page": 5
         },
         {
-            "level": "H2",
+            "level": "H1",
             "text": "Convert a file to PDF using Acrobat menu",
             "page": 7
         },
@@ -104,6 +104,11 @@
         {
             "level": "H3",
             "text": "(Outlook)",
+            "page": 18
+        },
+        {
+            "level": "H3",
+            "text": "PDF",
             "page": 18
         },
         {
