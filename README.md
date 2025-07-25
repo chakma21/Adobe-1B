@@ -1,121 +1,100 @@
-# 📄 PDF Outline Extractor – Round 1A: Understand Your Document
+### 🧠 Persona-Driven Document Intelligence – Round 1B
 
 ## 🚀 Hackathon Theme: Connecting the Dots Through Docs
 
 ## 🔍 Objective
-This project extracts a structured outline from any PDF document (up to 50 pages). It identifies the:
 
-- Title  
-- Headings at different levels: H1, H2, and optionally H3  
-- Page number of each heading  
+This project extracts the most relevant sections from a set of PDF documents by understanding a given persona and their job-to-be-done. It ranks the extracted sections based on relevance and generates a summarized JSON output.
 
-The output is a valid JSON file that can be used for semantic search, recommendations, or insight generation.
+Works seamlessly across research papers, financial reports, whitepapers, and more.
 
 ---
 
 ## 🛠️ Features
 
-- ✅ Title extraction from first-page content  
-- ✅ Heading detection using font size and boldness (not just size alone)  
-- ✅ Outputs hierarchical outline with page numbers  
-- ✅ Works offline without any internet access  
-- ✅ Fully Dockerized and runs on amd64 CPUs  
-- ✅ Handles real-world PDFs with both simple and complex layouts  
+- ✅ Extracts text from PDFs with structure (font size, position, boldness)
+- ✅ Ranks sections based on persona & task using SentenceTransformers
+- ✅ Summarizes the most relevant passages
+- ✅ Outputs final results in a clean JSON format
+- ✅ Dockerized and works offline (no internet required)
+- ✅ CPU-only & <1GB model footprint
 
 ---
 
 ### 🧰 Tech Stack
 
-- **Language**: Python 3.10  
-- **PDF Library**: [PyMuPDF (fitz)](https://pymupdf.readthedocs.io/)  
-- **Containerization**: Docker (amd64 CPU-compatible)  
-- **Output Format**: JSON  
+- **Language**: Python 3.10
+- **PDF Library**: PyMuPDF (fitz)
+- **ML Models**: SentenceTransformers (CPU only)
+- **Containerization**: Docker (amd64 CPU-compatible)
+- **Output Format**: JSON
 
 ---
 
 ## 📁 Input/Output Format
 
-### 🔹 Input  
-Place all `.pdf` files inside:
-/app/input
+### 🔹 Input
+
+- Place all .pdf files inside:/app/documents
+- Include an input_payload.json file with this format:
+
+{
+  "persona": { "role": "Investment Analyst" },
+  "job_to_be_done": { "task": "Analyze revenue trends, R&D investments, and market positioning" },
+  "documents": [
+    { "filename": "CompanyA.pdf", "title": "Company A" },
+    { "filename": "CompanyB.pdf" },
+    { "filename": "CompanyC.pdf" }
+  ]
+}
 
 ### 🔹 Output
-For every input.pdf, the script creates a corresponding:
 
-bash
-Copy
-Edit
-/app/output/input.json
+- The tool generates:/app/processed_document_output.json
 
-### 🔹 JSON Output Format
-json
-Copy
-Edit
 {
-  "title": "Understanding AI",
-  "outline": [
-    { "level": "H1", "text": "Introduction", "page": 1 },
-    { "level": "H2", "text": "What is AI?", "page": 2 },
-    { "level": "H3", "text": "History of AI", "page": 3 }
+  "metadata": {
+    "persona": "Investment Analyst",
+    "job_to_be_done": "Analyze revenue trends...",
+    "processing_timestamp": "2025-07-25T12:34:56"
+  },
+  "extracted_sections": [
+    {
+      "document": "CompanyA.pdf",
+      "section_title": "Financial Overview",
+      "importance_rank": 1,
+      "page_number": 3
+    }
+  ],
+  "subsection_analysis": [
+    {
+      "document": "CompanyA.pdf",
+      "refined_text": "Revenue increased by 15%...",
+      "page_number": 3
+    }
   ]
 }
 
 ### 🧠 Approach
+
 ## 📄 PDF Parsing
-We use PyMuPDF (fitz) to extract structured information from PDFs, including:
 
-Text content
+- Extracts structured text blocks using PyMuPDF
+- Captures font size, boldness, position, and style
 
-Font size
+## 🧩 Section Detection
 
-Font style
+- Uses font styles to identify headings (H1, H2, etc.)
+- Groups content into sections for semantic ranking
 
-Bounding box positions
+## 🧠 Relevance Ranking
 
-Boldness flags
-
-This allows us to differentiate headings from body text more reliably.
-
-## 🏷️ Title Detection
-Selected from the first page
-
-Chooses the largest font text near the top of the page
-
-In some special cases (e.g., filename contains "breakfast"), a fallback title is used
-
-The selected title is removed from further heading consideration to avoid duplication
-
-## 🧩 Heading Detection
-Headings are determined based on:
-
-Bold font usage
-
-Short length (typically less than 7 words)
-
-Structural hints (e.g., H2 often ends with a colon :)
-
-We:
-
-Identify likely H1 and H2 based on style grouping
-
-Ignore long paragraphs and bullet points (•)
-
-Optionally detect H3 if layout structure allows
-
-Each detected heading includes its text, level (H1/H2/H3), and page number.
+- Encodes persona/task and section text with SentenceTransformer
+- Ranks sections using cosine similarity
+- Selects top-k relevant sections
 
 ### 🐳 Docker Setup
+
 Build the Docker Image
 
-<pre> ```bash docker build --platform linux/amd64 -t mysolutionname:somerandomidentifier . ``` </pre>
---platform linux/amd64 ensures compatibility with the judging environment
-
 Run the Docker Container
-
-docker run --rm \
-  -v $(pwd)/input:/app/input \
-  -v $(pwd)/output:/app/output \
-  --network none \
-  mysolutionname:somerandomidentifier
-
----
