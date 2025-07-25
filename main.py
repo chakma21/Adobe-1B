@@ -20,10 +20,9 @@ def analyze_pdf_for_hackathon(pdf_path):
     # 1. Reliable Text Extraction (from your new script's logic)
     text_blocks = []
     for page_num, page in enumerate(doc):
-        # Using page.get_text("dict") is a robust way to get all text spans
         page_blocks = page.get_text("dict").get("blocks", [])
         for block in page_blocks:
-            if block.get('type') == 0:  # This is a text block
+            if block.get('type') == 0:
                 for line in block.get("lines", []):
                     for span in line.get("spans", []):
                         text = span.get("text", "").strip()
@@ -34,7 +33,6 @@ def analyze_pdf_for_hackathon(pdf_path):
                             "text": text,
                             "size": span.get("size", 0),
                             "font": span.get("font", ""),
-                            # Using flags is a more reliable way to detect bold
                             "bold": bool(span.get("flags", 0) & 2),
                             "page": page_num + 1,
                             "bbox": span.get("bbox", (0, 0, 0, 0))
@@ -44,7 +42,7 @@ def analyze_pdf_for_hackathon(pdf_path):
         doc.close()
         return {"title": "No text found", "outline": []}
 
-    # 2. Heuristic Analysis (using our advanced scoring system)
+    # 2. Heuristic Analysis 
     font_sizes = [b['size'] for b in text_blocks]
     body_size = max(set(font_sizes), key=font_sizes.count)
 
@@ -56,7 +54,7 @@ def analyze_pdf_for_hackathon(pdf_path):
         if i > 0 and text_blocks[i-1]['page'] == block['page']:
             space_above = block['bbox'][1] - text_blocks[i-1]['bbox'][3]
             if space_above > (block['size'] * 0.5): score += 4
-        else: score += 2 # Boost for being first on a page
+        else: score += 2
         if len(block['text'].split()) < 10: score += 3
         if block['text'].isupper() and len(block['text']) > 1: score += 4
         if re.match(r'^\d+(\.\d+)*\s|\b(Chapter|Section|Introduction|Conclusion)\b', block['text'], re.IGNORECASE): score += 10
