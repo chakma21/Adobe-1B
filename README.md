@@ -25,7 +25,7 @@ Works seamlessly across research papers, financial reports, whitepapers, and mor
 
 - **Language**: Python 3.10
 - **PDF Library**: PyMuPDF (fitz)
-- **ML Models**: SentenceTransformers (CPU only)
+- **ML Models**: SentenceTransformers (all-MiniLM-L6-v2) (CPU only)
 - **Containerization**: Docker (amd64 CPU-compatible)
 - **Output Format**: JSON
 
