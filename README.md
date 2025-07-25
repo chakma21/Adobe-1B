@@ -117,6 +117,25 @@ Works seamlessly across research papers, financial reports, whitepapers, and mor
 
 ### 🐳 Docker Setup
 
-Build the Docker Image
+Building the Docker Image
+
+
+<pre> docker build --platform linux/amd64 -t mysolutionname:somerandomidentifier . </pre>
+For eg:-  <pre> ```docker build --platform linux/amd64 -t solution-1b:1.0 . ``` </pre>
+
+--platform linux/amd64 ensures compatibility with the judging environment
 
 Run the Docker Container
+The command which runs the container in an isolated, offline environment
+
+**This is very required step**
+To get the exact path for the source
+From the root directory, go to models folder then all-MiniLM-L6-v2
+Then type pwd to get the path.
+Then paste it in the docker run command.
+
+
+For eg:- <pre> ```docker run --rm --network none --mount type=bind,source="$(pwd)",destination=/app --mount type=bind,source="C:\Users\shiny\Adobe\models\all-MiniLM-L6-v2",destination=/model solution-1b:1.0 ``` </pre>
+
+#### Dont direct copy paste this command
+###### Please refer to the pdf link to refer to the changes to be made in the command
