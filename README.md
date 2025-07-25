@@ -38,20 +38,34 @@ Works seamlessly across research papers, financial reports, whitepapers, and mor
 - Place all .pdf files inside:/app/documents
 - Include an input_payload.json file with this format:
 
+``` json
 {
-  "persona": { "role": "Investment Analyst" },
-  "job_to_be_done": { "task": "Analyze revenue trends, R&D investments, and market positioning" },
+  "persona": {
+    "role": "Investment Analyst"
+  },
+  "job_to_be_done": {
+    "task": "Analyze revenue trends, R&D investments, and market positioning"
+  },
   "documents": [
-    { "filename": "CompanyA.pdf", "title": "Company A" },
-    { "filename": "CompanyB.pdf" },
-    { "filename": "CompanyC.pdf" }
+    {
+      "filename": "CompanyA.pdf",
+      "title": "Company A"
+    },
+    {
+      "filename": "CompanyB.pdf"
+    },
+    {
+      "filename": "CompanyC.pdf"
+    }
   ]
 }
+```
 
 ### 🔹 Output
 
 - The tool generates:/app/processed_document_output.json
 
+```json
 {
   "metadata": {
     "persona": "Investment Analyst",
@@ -74,6 +88,8 @@ Works seamlessly across research papers, financial reports, whitepapers, and mor
     }
   ]
 }
+```
+---
 
 ### 🧠 Approach
 
@@ -82,16 +98,22 @@ Works seamlessly across research papers, financial reports, whitepapers, and mor
 - Extracts structured text blocks using PyMuPDF
 - Captures font size, boldness, position, and style
 
+---
+
 ## 🧩 Section Detection
 
 - Uses font styles to identify headings (H1, H2, etc.)
 - Groups content into sections for semantic ranking
+
+---
 
 ## 🧠 Relevance Ranking
 
 - Encodes persona/task and section text with SentenceTransformer
 - Ranks sections using cosine similarity
 - Selects top-k relevant sections
+
+---
 
 ### 🐳 Docker Setup
 
