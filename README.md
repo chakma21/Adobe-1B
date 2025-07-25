@@ -126,9 +126,10 @@ For eg:-  <pre> ```docker build --platform linux/amd64 -t solution-1b:1.0 . ``` 
 --platform linux/amd64 ensures compatibility with the judging environment
 
 Run the Docker Container
+
 The command which runs the container in an isolated, offline environment
 
-**This is very required step**
+**This is very required step**\
 To get the exact path for the source\
 From the root directory, go to models folder then all-MiniLM-L6-v2\
 Then type pwd to get the path.\
