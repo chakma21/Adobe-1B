@@ -129,13 +129,15 @@ Run the Docker Container
 The command which runs the container in an isolated, offline environment
 
 **This is very required step**
-To get the exact path for the source
-From the root directory, go to models folder then all-MiniLM-L6-v2
-Then type pwd to get the path.
+To get the exact path for the source\
+From the root directory, go to models folder then all-MiniLM-L6-v2\
+Then type pwd to get the path.\
 Then paste it in the docker run command.
 
 
 For eg:- <pre> ```docker run --rm --network none --mount type=bind,source="$(pwd)",destination=/app --mount type=bind,source="C:\Users\shiny\Adobe\models\all-MiniLM-L6-v2",destination=/model solution-1b:1.0 ``` </pre>
 
 #### Dont direct copy paste this command
-###### Please refer to the pdf link to refer to the changes to be made in the command
+#### Please refer to the pdf link to refer how to do the changes to be made in the command
+
+https://docs.google.com/document/d/1PHLsBHlwOMgzldJW_NY3jj1jZT6iqAztcpRVXE6xgJA/edit?usp=sharing
