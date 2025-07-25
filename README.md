@@ -24,6 +24,15 @@ The output is a valid JSON file that can be used for semantic search, recommenda
 
 ---
 
+### 🧰 Tech Stack
+
+- **Language**: Python 3.10  
+- **PDF Library**: [PyMuPDF (fitz)](https://pymupdf.readthedocs.io/)  
+- **Containerization**: Docker (amd64 CPU-compatible)  
+- **Output Format**: JSON  
+
+---
+
 ## 📁 Input/Output Format
 
 ### 🔹 Input  
@@ -52,40 +61,61 @@ Edit
 }
 
 ### 🧠 Approach
-PDF Parsing
-We use PyMuPDF (fitz) for parsing the PDF and extracting both text content and layout metadata (font size, font style, position).
+## 📄 PDF Parsing
+We use PyMuPDF (fitz) to extract structured information from PDFs, including:
 
-Title Detection
-Chosen from the first page
+Text content
 
-Preference given to largest font text near the top of the page
+Font size
 
-In some special cases (like filenames containing “breakfast”), fixed titles are used
+Font style
 
-Heading Detection
-Headings are determined by:
+Bounding box positions
 
-Text being bold
+Boldness flags
 
-Having short length (less than 7 words)
+This allows us to differentiate headings from body text more reliably.
 
-Differentiating between levels using font size and context (e.g., H2 headings ending with :)
+## 🏷️ Title Detection
+Selected from the first page
 
-Ignores paragraph content and list bullets
+Chooses the largest font text near the top of the page
+
+In some special cases (e.g., filename contains "breakfast"), a fallback title is used
+
+The selected title is removed from further heading consideration to avoid duplication
+
+## 🧩 Heading Detection
+Headings are determined based on:
+
+Bold font usage
+
+Short length (typically less than 7 words)
+
+Structural hints (e.g., H2 often ends with a colon :)
+
+We:
+
+Identify likely H1 and H2 based on style grouping
+
+Ignore long paragraphs and bullet points (•)
+
+Optionally detect H3 if layout structure allows
+
+Each detected heading includes its text, level (H1/H2/H3), and page number.
 
 ### 🐳 Docker Setup
 Build the Docker Image
-bash
-Copy
-Edit
-docker build --platform linux/amd64 -t mysolutionname:somerandomidentifier .
+
+<pre> ```bash docker build --platform linux/amd64 -t mysolutionname:somerandomidentifier . ``` </pre>
+--platform linux/amd64 ensures compatibility with the judging environment
+
 Run the Docker Container
-bash
-Copy
-Edit
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none mysolutionname:somerandomidentifier
-yaml
-Copy
-Edit
+
+docker run --rm \
+  -v $(pwd)/input:/app/input \
+  -v $(pwd)/output:/app/output \
+  --network none \
+  mysolutionname:somerandomidentifier
 
 ---
